@@ -1,0 +1,123 @@
+.main {
+  &__items {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  &__item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    border: 2px solid #000;
+    min-height: 510px;
+    width: 50%;
+    color: #000;
+    font-size: 90px;
+    font-weight: 400;
+    line-height: 90%;
+    letter-spacing: -2.7px;
+
+    @include media($lg) {
+      min-height: 426px;
+    }
+
+    @include media($sm) {
+      padding: 20px;
+    }
+
+    &:nth-child(1) {
+      border-left: none;
+      border-top: none;
+
+      @include media($lg) {
+        text-align: left;
+      }
+
+      @include media($sm) {
+        align-items: flex-start;
+      }
+    }
+
+    &:nth-child(2) {
+      border-top: none;
+      border-right: none;
+
+      @include media($lg) {
+        text-align: right;
+      }
+
+      @include media($sm) {
+        align-items: flex-start;
+      }
+    }
+
+    &:nth-child(4) {
+      border-left: none;
+      border-bottom: none;
+
+      @include media($lg) {
+        text-align: left;
+      }
+
+      @include media($sm) {
+        align-items: flex-end;
+      }
+    }
+
+    &:nth-child(5) {
+      border-right: none;
+      border-bottom: none;
+
+      @include media($lg) {
+        text-align: right;
+      }
+
+      @include media($sm) {
+        align-items: flex-end;
+      }
+    }
+  }
+
+  &__link {
+    cursor: pointer;
+    word-break: break-word;
+    color: #000;
+
+    &:hover {
+      text-decoration: underline;
+    }
+
+    @include media($sm) {
+      max-width: 157px;
+    }
+  }
+
+  &__logo {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 190px;
+    height: 190px;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    border: 4px solid #000;
+    background-color: #fff;
+    border-radius: 50%;
+    animation: spin 18s linear infinite;
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
